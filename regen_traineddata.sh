@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Re-generate chi_sim.traineddata
+
 FONT_DIR=/usr/share/fonts
 KAI_FONT_NAME="AR PL UKai CN"
 KAI_FONT_NAME_NO_SPACE="ARPLUKaiCN"
@@ -42,5 +44,8 @@ mv normproto chi_sim.normproto
 combine_tessdata chi_sim.
 
 mv chi_sim.traineddata ../tessdata/
+
+# Update version.json
+cd .. && ./update.js traineddata
 
 exit 0
